@@ -11,6 +11,7 @@ export async function greet(formData: FormData) {
     const formattedName = name.trim()
     return { message: `Hello ${formattedName}! Welcome to our application.` }
   } catch (error) {
+     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     return { error: "An error occurred while processing your request" }
   }
 }
