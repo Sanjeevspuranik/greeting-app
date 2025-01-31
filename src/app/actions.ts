@@ -1,6 +1,6 @@
 "use server"
 
-export async function greet(prevState: any, formData: FormData) {
+export async function greet(formData: FormData) {
   try {
     const name = formData.get("name")
 

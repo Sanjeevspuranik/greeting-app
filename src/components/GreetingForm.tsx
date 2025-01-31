@@ -24,7 +24,7 @@ export default function GreetingForm() {
     }
 
     startTransition(async () => {
-      const result = await greet(null, new FormData(event.currentTarget))
+      const result = await greet(new FormData(event.currentTarget))
       if ('error' in result && result.error) {
         setError(result.error)
         setGreeting("")
