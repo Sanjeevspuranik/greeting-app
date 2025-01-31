@@ -15,6 +15,14 @@ export default function GreetingForm() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const trimmedName = name.trim()
+    
+    if (trimmedName.length === 0) {
+      setError("Name cannot be empty. Please enter a valid name.")
+      setGreeting("")
+      return
+    }
+
     startTransition(async () => {
       const result = await greet(null, new FormData(event.currentTarget))
       if ('error' in result && result.error) {
